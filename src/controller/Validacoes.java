@@ -31,7 +31,7 @@ public class Validacoes {
     }
 
     static boolean identificador(String caratere) {
-        return caratere.matches(Regex.INDENTIFIER);
+        return caratere.matches(Regex.IDENTIFIER);
     }
     
 
@@ -42,17 +42,16 @@ public class Validacoes {
         } else {
             str = str1;
         }
-        if (simbolo(str)) {
-            if(is_relational_operator(str))
-                return "RELATIONAL OPERATOR";
-            else
+        if(is_relational_operator(str))
+             return "RELATIONAL OPERATOR";
+        else if(simbolo(str)) 
             return "SPECIAL SYMBOL";
-        } else if (digito(str)) {
+        else if (digito(str)) 
             return "DIGIT";
-        } else if (identificador(str)) {
+        else if (identificador(str)) 
             return "IDENTIFIER";
-        } else {
+        else 
             return "ERRO";
-        }
+        
     }
 }
